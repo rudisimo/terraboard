@@ -75,6 +75,7 @@ func refreshDB(syncInterval float64, d *db.Database, sp state.Provider) {
 			time.Sleep(interval)
 			continue
 		}
+		log.Debugf("Total states: %d", len(states))
 
 		statesVersions := d.ListStatesVersions()
 		for _, st := range states {
