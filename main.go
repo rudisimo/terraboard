@@ -63,15 +63,15 @@ func isKnownStateVersion(statesVersions map[string][]string, versionID, path str
 
 // Refresh the DB
 // This should be the only direct bridge between the state providers and the DB
-func refreshDB(syncInterval uint16, d *db.Database, sp state.Provider) {
-	interval := time.Duration(syncInterval) * time.Minute
+func refreshDB(syncInterval float64, d *db.Database, sp state.Provider) {
+	interval := time.Duration(syncInterval * float64(time.Minute))
 	for {
 		log.Infof("Refreshing DB")
 		states, err := sp.GetStates()
 		if err != nil {
 			log.WithFields(log.Fields{
 				"error": err,
-			}).Error("Failed to retrieve states. Retrying in 1 minute.")
+			}).Errorf("Failed to retrieve states. Retrying in %s.", interval)
 			time.Sleep(interval)
 			continue
 		}
@@ -116,7 +116,7 @@ func refreshDB(syncInterval uint16, d *db.Database, sp state.Provider) {
 			}
 		}
 
-		log.Debugf("Waiting %d minutes until next DB sync", syncInterval)
+		log.Debugf("Waiting %s until next DB sync", interval)
 		time.Sleep(interval)
 	}
 }

@@ -45,14 +45,14 @@ type LogConfig struct {
 
 // DBConfig stores the database configuration
 type DBConfig struct {
-	Host         string `long:"db-host" env:"DB_HOST" yaml:"host" description:"Database host." default:"db"`
-	Port         uint16 `long:"db-port" env:"DB_PORT" yaml:"port" description:"Database port." default:"5432"`
-	User         string `long:"db-user" env:"DB_USER" yaml:"user" description:"Database user." default:"gorm"`
-	Password     string `long:"db-password" env:"DB_PASSWORD" yaml:"password" description:"Database password."`
-	Name         string `long:"db-name" env:"DB_NAME" yaml:"name" description:"Database name." default:"gorm"`
-	SSLMode      string `long:"db-sslmode" env:"DB_SSLMODE" yaml:"sslmode" description:"Database SSL mode." default:"require"`
-	NoSync       bool   `long:"no-sync" yaml:"no-sync" description:"Do not sync database."`
-	SyncInterval uint16 `long:"sync-interval" yaml:"sync-interval" description:"DB sync interval (in minutes)" default:"1"`
+	Host         string  `long:"db-host" env:"DB_HOST" yaml:"host" description:"Database host." default:"db"`
+	Port         uint16  `long:"db-port" env:"DB_PORT" yaml:"port" description:"Database port." default:"5432"`
+	User         string  `long:"db-user" env:"DB_USER" yaml:"user" description:"Database user." default:"gorm"`
+	Password     string  `long:"db-password" env:"DB_PASSWORD" yaml:"password" description:"Database password."`
+	Name         string  `long:"db-name" env:"DB_NAME" yaml:"name" description:"Database name." default:"gorm"`
+	SSLMode      string  `long:"db-sslmode" env:"DB_SSLMODE" yaml:"sslmode" description:"Database SSL mode." default:"require"`
+	NoSync       bool    `long:"no-sync" yaml:"no-sync" description:"Do not sync database."`
+	SyncInterval float64 `long:"sync-interval" yaml:"sync-interval" description:"DB sync interval (in minutes)" default:"1.0"`
 }
 
 // S3BucketConfig stores the S3 bucket configuration

@@ -15,7 +15,7 @@ func (s *Config) UnmarshalYAML(unmarshal func(interface{}) error) error {
 			User:         "gorm",
 			Name:         "gorm",
 			SSLMode:      "require",
-			SyncInterval: 1,
+			SyncInterval: 1.0,
 		},
 		Log: LogConfig{
 			Level:  "info",
