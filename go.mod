@@ -1,8 +1,8 @@
 module github.com/camptocamp/terraboard
 
-go 1.21.1
+go 1.21.5
 
-toolchain go1.21.3
+toolchain go1.21.10
 
 require (
 	cloud.google.com/go/storage v1.33.0
@@ -25,12 +25,12 @@ require (
 	github.com/hashicorp/go-getter v1.7.3
 	github.com/hashicorp/go-hclog v1.5.0
 	github.com/hashicorp/go-multierror v1.1.1
-	github.com/hashicorp/go-retryablehttp v0.7.4
-	github.com/hashicorp/go-tfe v1.37.0
+	github.com/hashicorp/go-retryablehttp v0.7.5
+	github.com/hashicorp/go-tfe v1.41.0
 	github.com/hashicorp/go-uuid v1.0.3
 	github.com/hashicorp/go-version v1.6.0
 	github.com/hashicorp/hcl/v2 v2.19.1
-	github.com/hashicorp/terraform v1.6.2
+	github.com/hashicorp/terraform v1.7.5
 	github.com/hashicorp/terraform-svchost v0.1.1
 	github.com/jessevdk/go-flags v1.5.0
 	github.com/machinebox/graphql v0.2.2
@@ -44,11 +44,11 @@ require (
 	github.com/swaggo/swag v1.16.2
 	github.com/zclconf/go-cty v1.14.1
 	github.com/zclconf/go-cty-yaml v1.0.3
-	golang.org/x/crypto v0.14.0
+	golang.org/x/crypto v0.17.0
 	golang.org/x/mod v0.13.0
-	golang.org/x/net v0.17.0
-	golang.org/x/sys v0.13.0
-	golang.org/x/text v0.13.0
+	golang.org/x/net v0.19.0
+	golang.org/x/sys v0.16.0
+	golang.org/x/text v0.14.0
 	google.golang.org/api v0.148.0
 	gopkg.in/yaml.v2 v2.4.0
 	gorm.io/datatypes v1.2.0
@@ -65,7 +65,7 @@ require (
 	github.com/apparentlymart/go-textseg/v15 v15.0.0 // indirect
 	github.com/bgentry/go-netrc v0.0.0-20140422174119-9fd32a8b3d3d // indirect
 	github.com/coreos/go-systemd v0.0.0-20191104093116-d3cd4ed1dbcf // indirect
-	github.com/fatih/color v1.15.0 // indirect
+	github.com/fatih/color v1.16.0 // indirect
 	github.com/go-openapi/jsonpointer v0.20.0 // indirect
 	github.com/go-openapi/jsonreference v0.20.2 // indirect
 	github.com/go-openapi/spec v0.20.9 // indirect
@@ -78,8 +78,8 @@ require (
 	github.com/googleapis/enterprise-certificate-proxy v0.3.2 // indirect
 	github.com/googleapis/gax-go/v2 v2.12.0 // indirect
 	github.com/hashicorp/go-safetemp v1.0.0 // indirect
-	github.com/hashicorp/go-slug v0.12.2 // indirect
-	github.com/hashicorp/jsonapi v0.0.0-20231023233540-b6a3d216e521 // indirect
+	github.com/hashicorp/go-slug v0.13.4 // indirect
+	github.com/hashicorp/jsonapi v1.2.0 // indirect
 	github.com/jackc/pgpassfile v1.0.0 // indirect
 	github.com/jackc/pgservicefile v0.0.0-20221227161230-091c0ba34f0a // indirect
 	github.com/jackc/pgx/v5 v5.4.3 // indirect
@@ -102,8 +102,8 @@ require (
 	github.com/ulikunitz/xz v0.5.11 // indirect
 	go.opencensus.io v0.24.0 // indirect
 	golang.org/x/oauth2 v0.13.0 // indirect
-	golang.org/x/sync v0.4.0 // indirect
-	golang.org/x/time v0.3.0 // indirect
+	golang.org/x/sync v0.5.0 // indirect
+	golang.org/x/time v0.5.0 // indirect
 	golang.org/x/tools v0.14.0 // indirect
 	golang.org/x/xerrors v0.0.0-20231012003039-104605ab7028 // indirect
 	google.golang.org/appengine v1.6.8 // indirect
