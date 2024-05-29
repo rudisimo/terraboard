@@ -75,7 +75,6 @@ func refreshDB(syncInterval float64, d *db.Database, sp state.Provider) {
 			time.Sleep(interval)
 			continue
 		}
-		log.Debugf("Total states: %d", len(states))
 
 		statesVersions := d.ListStatesVersions()
 		for _, st := range states {
@@ -104,7 +103,7 @@ func refreshDB(syncInterval float64, d *db.Database, sp state.Provider) {
 						"path":       st,
 						"version_id": v.ID,
 						"error":      err,
-					}).Error("Failed to fetch state from bucket")
+					}).Error("Failed to fetch state from backend")
 					continue
 				}
 				if err = d.InsertState(st, v.ID, state); err != nil {
