@@ -36,6 +36,10 @@ gitlab:
   - address: https://gitlab.example.com
     token: foo
 
+local:
+  - path: /path/to/key
+    file: terraform.tfstate
+
 web:
   port: 39090
   base-url: /test/

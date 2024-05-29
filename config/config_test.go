@@ -73,6 +73,10 @@ func TestLoadConfig(t *testing.T) {
 			Address: "https://gitlab.com",
 			Token:   "",
 		},
+		Local: LocalConfig{
+			StatePath: "",
+			StateFile: "*.tfstate",
+		},
 		Web: WebConfig{
 			Port:        1234,
 			SwaggerPort: 8081,
@@ -142,6 +146,12 @@ func TestLoadConfigFromYaml(t *testing.T) {
 			{
 				Address: "https://gitlab.example.com",
 				Token:   "foo",
+			},
+		},
+		Local: []LocalConfig{
+			{
+				StatePath: "/path/to/key",
+				StateFile: "terraform.tfstate",
 			},
 		},
 		Web: WebConfig{
