@@ -88,5 +88,18 @@ func Configure(c *config.Config) ([]Provider, error) {
 		}
 	}
 
+	if len(c.Local) > 0 {
+		objs, err := NewLocalCollection(c)
+		if err != nil {
+			return []Provider{}, err
+		}
+		if len(objs) > 0 {
+			log.Info("Using Local as state/locks provider")
+			for _, localObj := range objs {
+				providers = append(providers, localObj)
+			}
+		}
+	}
+
 	return providers, nil
 }

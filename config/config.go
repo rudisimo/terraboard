@@ -33,6 +33,8 @@ type configFlags struct {
 
 	Gitlab GitlabConfig `group:"GitLab Options" yaml:"gitlab"`
 
+	Local LocalConfig `group:"Local Backend Options" yaml:"local"`
+
 	Web WebConfig `group:"Web" yaml:"web"`
 }
 
@@ -95,6 +97,12 @@ type GitlabConfig struct {
 	Token   string `long:"gitlab-token" env:"GITLAB_TOKEN" yaml:"token" description:"Token to authenticate upon GitLab"`
 }
 
+// LocalConfig stores the Local Backend configuration
+type LocalConfig struct {
+	StatePath string `long:"local-path" env:"LOCAL_PATH" yaml:"path" description:"The root path of state files for local backends"`
+	StateFile string `long:"local-file" env:"LOCAL_FILE" yaml:"file" description:"The name of state files for local backends" default:"*.tfstate"`
+}
+
 // WebConfig stores the UI interface parameters
 type WebConfig struct {
 	Port        uint16 `short:"p" long:"port" env:"TERRABOARD_PORT" yaml:"port" description:"Port to listen on." default:"8080"`
@@ -128,6 +136,8 @@ type Config struct {
 	GCP []GCPConfig `group:"Google Cloud Platform Options" yaml:"gcp"`
 
 	Gitlab []GitlabConfig `group:"GitLab Options" yaml:"gitlab"`
+
+	Local []LocalConfig `group:"Local Backend Options" yaml:"local"`
 
 	Web WebConfig `group:"Web" yaml:"web"`
 }
